@@ -7,17 +7,22 @@ function mostrar()
 	var numero;
 	var pregunta
 
-	numero=prompt("Ingrese un número")
-	pregunta=prompt("Quiere seguir sumando nùmeros?")
+	numero=prompt("Ingrese un número");
+	numero=parseInt(numero);
+	acumulador=acumulador+numero;
+	contador++;
+	pregunta=prompt("Quiere seguir sumando nùmeros?");
 	pregunta=pregunta.toLowerCase();
 
 
-	while(respuesta != pregunta)
+	while(respuesta == pregunta)
 	{
 		numero=prompt("Ingrese un número");
+		numero=parseInt(numero);
 		acumulador=acumulador+numero;
 		contador++;
 		pregunta=prompt("Quiere seguir sumando nùmeros?")
+		pregunta=pregunta.toLowerCase();
 	}
 
 document.getElementById('suma').value=acumulador;
